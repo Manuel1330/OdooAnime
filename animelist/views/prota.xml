@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="animelist_prota_action" name="prota"
+                     res_model="animelist.prota" />
+
+
+        <record id="animelist_prota_view_tree" model="ir.ui.view">
+            <field name="name">Lista protas</field>
+            <field name="model">animelist.prota</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field name="nombre" />
+                    <field name="sexo" />
+                    <field name="edad" />
+                    <field name="arma" />
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record id="animelist_prota_view_search" model="ir.ui.view">
+            <field name="name">Busqueda protas</field>
+            <field name="model">animelist.prota</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                    <field name="sexo" />
+                    <field name="edad" />
+                    <field name="arma" />
+
+
+                </search>
+            </field>
+        </record>
+        <menuitem name="Protas" id="menu_prota" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_prota" sequence="10"/>
+        <menuitem name="Prota" id="menu_protas" action="animelist_prota_action" parent="menu_inicio" sequence="10"/>
+
+    </data>
+</odoo>
